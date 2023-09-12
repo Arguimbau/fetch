@@ -6,6 +6,32 @@
     <script src="hello.js"></script>
 </head>
 <body>
+<h1>Find Users</h1>
+<div id="getUser">
+    <form>
+        <input id="user" type="number">
+        <input type="submit" value="Submit" id="submitBtn">
+        <input type="submit" value="Get All" id="getAllBtn">
+    </form>
+    <table>
+        <ul id="userList">
+        </ul>
+        <ul>
+        </ul>
+    </table>
+    <div id="userId">
+        <p>Name <span id="userName"></span></p>
+        <p>Phone number <span id="userPhone"></span></p>
+        <p><b>Address: </b></p>
 
+        <ul>
+            <li>Zip Code: <span id="userZip"></span></li>
+            <li>City: <span id="userCity"></span></li>
+            <li>Street: <span id="userStreet"></span></li>
+            <li>Geo: <span id="userGeo"></span></li>
+        </ul>
+
+    </div>
+</div>
 </body>
 </html>
