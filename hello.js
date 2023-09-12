@@ -17,23 +17,30 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((err) => console.log(err));
     });
-    document.querySelector("#getAllBtn".addEventListener("click", function (e){
+
+    document.getElementById("getAllBtn").addEventListener("click", function (e) {
         e.preventDefault();
-    fetch(`https://jsonplaceholder.typicode.com/users`)
-        .then((res) => res.json())
-        .then((data) => {
-            const userList = document.querySelector("#userList");
+        fetch(`https://jsonplaceholder.typicode.com/users`)
+            .then((res) => res.json())
+            .then((data) => {
+                const userList = document.querySelector("#userList");
+                userList.innerHTML = "";
 
 
-            userList.innerHTML = "";
+                    data.forEach((user) => {
+                        const listItem = document.createElement("tr");
+                        const nameCell = document.createElement("td");
+                        const phoneCell = document.createElement("td");
 
-            data.forEach((user) => {
-                const listItem = document.createElement("li");
-                listItem.textContent = "${user.name} (${user.phone})";
-                userList.appendChild(listItem);
-            });
+                        nameCell.textContent = user.name;
+                        phoneCell.textContent = user.phone;
 
-        })
-        .catch((err) => console.log(err));
-    }))
-});
+                        listItem.appendChild(nameCell);
+                        listItem.appendChild(phoneCell);
+                        userList.appendChild(listItem);
+
+                    });
+            })
+            .catch((err) => console.log(err));
+    })
+})

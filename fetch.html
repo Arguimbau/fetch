@@ -11,13 +11,17 @@
     <form>
         <input id="user" type="number">
         <input type="submit" value="Submit" id="submitBtn">
-        <input type="submit" value="Get All" id="getAllBtn">
+        <input type="button" value="Get All" id="getAllBtn">
     </form>
     <table>
-        <ul id="userList">
-        </ul>
-        <ul>
-        </ul>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        </thead>
+        <tbody id="userList">
+        </tbody>
     </table>
     <div id="userId">
         <p>Name <span id="userName"></span></p>
